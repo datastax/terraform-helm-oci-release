@@ -3,9 +3,11 @@ locals {
   complete_helm_login_command = var.helm_login_command == "" ? "" : "${var.helm_login_command} ${var.oci_repository}"
 }
 
-provider "helm" {
-  kubernetes {
-    config_path = var.kubernetes_config_path
+terraform {
+  required_providers {
+    helm = {
+      source  = "helm"
+    }
   }
 }
 
