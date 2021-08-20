@@ -39,4 +39,5 @@ resource "helm_release" "chart_release" {
   namespace = var.release_namespace
   chart = "${var.chart_download_location}/${var.chart_name}-${var.chart_version}/${var.chart_name}"
   force_update = var.release_force_update
+  values = var.values
 }

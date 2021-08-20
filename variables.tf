@@ -52,3 +52,9 @@ variable "kubernetes_config_path" {
   description = "Path to your Kubernetes configuration"
   default = "~/.kube/config"
 }
+
+variable "values" {
+  description = "List of values in raw yaml format to pass to helm."
+  type    = list(string)
+  default = []
+}
